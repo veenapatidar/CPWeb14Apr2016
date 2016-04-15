@@ -1,0 +1,52 @@
+extends ./template/layout.jade
+	
+	
+// --------------- Header -------------- //
+block custom_header
+	//script(src='/js/part2.js')
+	script(src='/js/blockchain.js')
+	script(src='/js/customers.js')
+	script(type='text/javascript').
+		$(document).ready(function(){
+			
+		});
+	
+	
+// --------------- Main Stuff  -------------- //
+block content
+	#contentPanel
+		#customerContainer
+			h1 Customer Details
+			hr
+
+
+			form(method="POST" action="/create" style="text-align: center;")
+				p.hint
+					!{bag.session.error_msg}
+					br
+					br
+				p
+					.hint Username
+					input(type="text" placeholder="username" name="username" required)
+				p
+					.hint KYC ID
+					input(type="password" name="password" required)
+				p
+					.hint Documents List
+				p
+					.hint Doc 1
+					input(type="text" placeholder="Doc 1" name="doc1")
+				p
+					.hint Doc 2
+					input(type="text" placeholder="Doc 2" name="doc2")
+				p
+					input(type="hidden" name="pageName" value="customer")
+				p
+					.hint Doc 3
+					input(type="text" placeholder="Doc 3" name="doc3" required)											
+					button(type="submit")#loginButton Submit
+		br
+		br
+
+		
+

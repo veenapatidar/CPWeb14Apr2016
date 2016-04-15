@@ -1,0 +1,54 @@
+extends ./template/layout.jade
+	
+	
+// --------------- Header -------------- //
+block custom_header
+	script(src='/js/part2.js')
+	script(src='/js/blockchain.js')
+	script(type='text/javascript').
+		$(document).ready(function(){
+			
+		});
+	
+	
+// --------------- Main Stuff  action="/bankVerification" style="text-align: center;"-------------- //
+block content
+	#contentPanel
+		#loginContainer
+			h2 Bank Verification
+			hr
+
+
+			form(method="POST" action="#" style="text-align: center;")
+				p.hint
+					!{bag.session.error_msg}
+					br
+					br
+				p
+					.hint BankName
+					input(type="text" placeholder="BankName" name="bankName" style="text-align: left;")
+				p
+					.hint Verification Queue
+					input(type="text" name="verificationQueue" style="text-align: left;")
+				p
+					.hint Pending Transactions
+				p
+					input(type="text" placeholder="Transaction 1" name="tran1" style="text-align: left;")
+				p
+					.hint
+					input(type="text" placeholder="Transaction 2" name="tran2" style="text-align: left;")
+				p
+					.hint
+					input(type="text" placeholder="Transaction 3" name="tran3" required style="text-align: left;")
+					br
+				p
+					.hint
+					button(type="submit" style="text-align: center;width:120px;align=left")#loginButton Reject
+					br
+					br									
+					button(type="submit" style="text-align: center; width:120px")#loginButton Approve
+		br
+		br
+
+		
+

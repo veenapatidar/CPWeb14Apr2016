@@ -1,0 +1,49 @@
+extends ./template/layout.jade
+	
+	
+// --------------- Header -------------- //
+block custom_header
+	script(src='/js/part2.js')
+	script(src='/js/blockchain.js')
+	script(type='text/javascript').
+		$(document).ready(function(){
+			
+		});
+	
+	
+// --------------- Main Stuff  -------------- //
+block content
+	#contentPanel
+		#loginContainer
+			h1 Customer Details
+			hr
+
+
+			form(method="POST" action="#" style="text-align: center;")
+				p.hint
+					!{bag.session.error_msg}
+					br
+					br
+				p
+					.hint Bank2 Username
+					input(type="text" placeholder="username" name="username" required)
+				p
+					.hint Bank2 KYC ID
+					input(type="password" name="password" required)
+				p
+					.hint Documents List
+				p
+					.hint Bank2 Doc 1
+					input(type="text" placeholder="Doc 1" name="doc1")
+				p
+					.hint Bank2 Doc 2
+					input(type="text" placeholder="Doc 2" name="doc2")
+				p
+					.hint Bank2 Doc 3
+					input(type="text" placeholder="Doc 3" name="doc3" required)											
+					button(type="submit")#loginButton Submit
+		br
+		br
+
+		
+
